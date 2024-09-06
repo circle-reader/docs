@@ -6,7 +6,7 @@
 
 非全屏幕状态下，点击工具栏（页面右侧一排按钮）最后一个按钮打开自定义工具栏面板，如下图：
 
-![Circle阅读助手的自定义工具栏](/sites/default/files/toolset.png)
+![Circle阅读助手的自定义工具栏](/assets/images/toolset.png)
 
 打开“发送到邮件“右侧的开关，此时工具栏会出现”发送到邮件“按钮。
 

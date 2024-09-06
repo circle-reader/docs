@@ -17,6 +17,9 @@ dependencies:
   gitbook-plugin-custom-favicon:
     specifier: ^0.0.4
     version: 0.0.4
+  gitbook-plugin-donate:
+    specifier: ^1.0.2
+    version: 1.0.2
   gitbook-plugin-expandable-chapters:
     specifier: ^0.2.0
     version: 0.2.0
@@ -26,15 +29,24 @@ dependencies:
   gitbook-plugin-highlight:
     specifier: ^2.0.3
     version: 2.0.3
-  gitbook-plugin-page-treeview:
-    specifier: ^3.0.6
-    version: 3.0.6
+  gitbook-plugin-insert-logo:
+    specifier: ^0.1.5
+    version: 0.1.5
   gitbook-plugin-popup:
     specifier: ^0.0.1
     version: 0.0.1
+  gitbook-plugin-rss:
+    specifier: ^3.0.2
+    version: 3.0.2
   gitbook-plugin-search-pro:
     specifier: ^2.0.2
     version: 2.0.2
+  gitbook-plugin-sidebar-style:
+    specifier: ^1.0.2
+    version: 1.0.2
+  gitbook-plugin-sitemap-general:
+    specifier: ^0.1.1
+    version: 0.1.1
   gitbook-plugin-splitter:
     specifier: ^0.0.8
     version: 0.0.8
@@ -44,15 +56,38 @@ dependencies:
 
 packages:
 
-  /argparse@0.1.16:
-    resolution: {integrity: sha512-LjmC2dNpdn2L4UzyoaIr11ELYoLn37ZFy9zObrQFHsSuOepeUEMKnM8w5KL4Tnrp2gy88rRuQt6Ky8Bjml+Baw==}
+  /commonmark-helpers@0.4.1:
+    resolution: {integrity: sha512-DGLcVABCUSWJ8aCpe3yG40bnto6pn3cc1TfabV4Iro6tU3QquKn9KaGp/HuCD20o6WCB5u2BetQeO22paOy6qg==}
     dependencies:
-      underscore: 1.7.0
-      underscore.string: 2.4.0
+      commonmark: 0.21.0
+      ramda: 0.17.1
     dev: false
 
-  /autolinker@0.15.3:
-    resolution: {integrity: sha512-mCyPIctUTUl324as6lCXFOkntxzZfVsKCCjivm0tlkig9GTUJ7Ap/TreIqeYyyJcrddro5g0a5cRnM/4pzfJgw==}
+  /commonmark@0.21.0:
+    resolution: {integrity: sha512-DbmJEJpsx1aSsDzi2mNu42dvtZWNCsrG+J7OD+qhv3InxffHRlpuKZCFoT/kzNBi6MflIHxerUeY6n7Az2yeFg==}
+    hasBin: true
+    dependencies:
+      entities: 1.1.2
+      mdurl: 1.0.1
+      string.prototype.repeat: 0.2.0
+    dev: false
+
+  /entities@1.1.2:
+    resolution: {integrity: sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==}
+    dev: false
+
+  /get-md-desc@1.0.2:
+    resolution: {integrity: sha512-zKtNaambKmIe1jc4RfgzgwH7nIM3m+4d06YxBizongaI3iOyOnH8mrVzsqh9HQ9hq4IN4OFtsP3PCeMKl0HDBA==}
+    dependencies:
+      commonmark-helpers: 0.4.1
+      trim-html-tag: 1.0.5
+    dev: false
+
+  /get-md-title@1.0.4:
+    resolution: {integrity: sha512-H+temaw3VH043EzOZWFT1GBKQqTeNfln3vP0tBscsjxYPSNCDmTuF5Ggya4DK3E4hjI7MbFW1TxqrQp1+LvHcg==}
+    dependencies:
+      commonmark-helpers: 0.4.1
+      trim-html-tag: 1.0.5
     dev: false
 
   /gitbook-plugin-back-to-top-button@0.1.4:
@@ -74,6 +109,10 @@ packages:
     resolution: {integrity: sha512-EbisNmFhpxPt+LG5jTLs8vkZd4haPY4LFzeMK3FOs2bmMJsyIRSjuygjLtnRG1lvJFboyiKndKcIJig+3cR0bA==}
     dev: false
 
+  /gitbook-plugin-donate@1.0.2:
+    resolution: {integrity: sha512-wl1cbgqCAhRkilsRixRc6otTeTLTCN8B0Yz4jNIKLR15hs5LHjyhlTQIe0Sb8rc7KMIECe4WZXXxziO+yjjyIw==}
+    dev: false
+
   /gitbook-plugin-expandable-chapters@0.2.0:
     resolution: {integrity: sha512-oEFVR/5UrjQYsu/WWPLiwgB2kUi9V3T+JqifBBzEvC45aPNmV1Jx/zoWSlISYSN9M5f8/l1DPl5zkL5hFSFfgA==}
     engines: {gitbook: '>=0.4.6'}
@@ -90,17 +129,22 @@ packages:
       highlight.js: 9.8.0
     dev: false
 
-  /gitbook-plugin-page-treeview@3.0.6:
-    resolution: {integrity: sha512-531n1KG2IbBvuRkIwsi87/QXQEIVF6Ww2ou2Xbo9togR49PW3Zu2dysZn+5E3Yd+106+6U8G++KI0gPobPPcNw==}
-    engines: {gitbook: '>=3.0.0-pre.0'}
-    dependencies:
-      marked: 1.2.7
-      node-html-parser: 1.2.20
-      remarkable: 1.6.2
+  /gitbook-plugin-insert-logo@0.1.5:
+    resolution: {integrity: sha512-W8xLlchSbV2rZIfc10PmJS8SfzPzbkfTs8CZicx8LZkiEKcSE2vJ6FMY3ZGkTuDt0TVYJmSxVmk9xLX237RDgg==}
+    engines: {gitbook: '>1.x.x'}
     dev: false
 
   /gitbook-plugin-popup@0.0.1:
     resolution: {integrity: sha512-UpLsvLOM2+UcVUgX1u2iHNGrAEsBw9I7CWCnF3XkX72iMqhs5wAq7YGhzqFHDA1C6HGXNjqHIUnP75XVGWeTlQ==}
+    dev: false
+
+  /gitbook-plugin-rss@3.0.2:
+    resolution: {integrity: sha512-9VGBqSiQI2W6v+eLteOlFdEKFN31GhcOzuxHsUxeunX1gNGRXrShZ28W4jO0TJCHI1cOYM1Rid3MZbPdMdU5lQ==}
+    engines: {gitbook: '>=3.2.0', node: '>=4'}
+    dependencies:
+      get-md-desc: 1.0.2
+      get-md-title: 1.0.4
+      rss: 1.2.2
     dev: false
 
   /gitbook-plugin-search-pro@2.0.2:
@@ -108,6 +152,18 @@ packages:
     engines: {gitbook: '>=3.0.0'}
     dependencies:
       html-entities: 1.2.0
+    dev: false
+
+  /gitbook-plugin-sidebar-style@1.0.2:
+    resolution: {integrity: sha512-jMUdoI8X+HvCrdK/HLlBsLUkooeXsXTis9qoX3hXO32pdSK323njEfxrGmDwhysV0UmKP6JGsxbNjl8Vak0omA==}
+    engines: {gitbook: '>1.x.x'}
+    dev: false
+
+  /gitbook-plugin-sitemap-general@0.1.1:
+    resolution: {integrity: sha512-Oe3ClhXzuxdsEnN7uhhMLIylXeMSFuW0YZhAe+Wk0agAXvlcBgOk61gnnp1Nde4QJ7lu2Vi2XNh2sI4uPGJT5g==}
+    engines: {gitbook: '>=3.0.0-pre.0'}
+    dependencies:
+      sitemap: 1.5.0
     dev: false
 
   /gitbook-plugin-splitter@0.0.8:
@@ -122,11 +178,6 @@ packages:
       moment: 2.30.1
     dev: false
 
-  /he@1.1.1:
-    resolution: {integrity: sha512-z/GDPjlRMNOa2XJiB4em8wJpuuBfrFOlYKTZxtpkdr1uPdibHI8rYA3MY0KDObpVyaes0e/aunid/t88ZI2EKA==}
-    hasBin: true
-    dev: false
-
   /highlight.js@9.8.0:
     resolution: {integrity: sha512-wVMPeK1JZ6AK8+daRQx/65MUJPygjfFfM0WhQq9FBvoShyKAfn9L+fRCudbSpcRg7vxVSqRms7RM4zCK9Ok4Lw==}
     deprecated: Version no longer supported. Upgrade to @latest
@@ -137,34 +188,62 @@ packages:
     engines: {'0': node >= 0.4.0}
     dev: false
 
-  /marked@1.2.7:
-    resolution: {integrity: sha512-No11hFYcXr/zkBvL6qFmAp1z6BKY3zqLMHny/JN/ey+al7qwCM2+CMBL9BOgqMxZU36fz4cCWfn2poWIf7QRXA==}
-    engines: {node: '>= 8.16.2'}
-    hasBin: true
+  /mdurl@1.0.1:
+    resolution: {integrity: sha512-/sKlQJCBYVY9Ers9hqzKou4H6V5UWc/M59TH2dvkt+84itfnq7uFOMLpOiOS4ujvHP4etln18fmIxA5R5fll0g==}
+    dev: false
+
+  /mime-db@1.25.0:
+    resolution: {integrity: sha512-5k547tI4Cy+Lddr/hdjNbBEWBwSl8EBc5aSdKvedav8DReADgWJzcYiktaRIw3GtGC1jjwldXtTzvqJZmtvC7w==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /mime-types@2.1.13:
+    resolution: {integrity: sha512-ryBDp1Z/6X90UvjUK3RksH0IBPM137T7cmg4OgD5wQBojlAiUwuok0QeELkim/72EtcYuNlmbkrcGuxj3Kl0YQ==}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      mime-db: 1.25.0
     dev: false
 
   /moment@2.30.1:
     resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
     dev: false
 
-  /node-html-parser@1.2.20:
-    resolution: {integrity: sha512-1fUpYjAducDrrBSE0etRUV1tM+wSFTudmrslMXuk35wL/L29E7e1CLQn4CNzFLnqtYpmDlWhkD6VUloyHA0dwA==}
+  /ramda@0.17.1:
+    resolution: {integrity: sha512-6XwOkewuUOhFWIvc4lonoyaui7nQLrBG9p71N2QTNHkAeKJS+vhEk9D/Cv/v8hRCS7JBLLmtXH0KwcBg2u/nfQ==}
+    dev: false
+
+  /rss@1.2.2:
+    resolution: {integrity: sha512-xUhRTgslHeCBeHAqaWSbOYTydN2f0tAzNXvzh3stjz7QDhQMzdgHf3pfgNIngeytQflrFPfy6axHilTETr6gDg==}
     dependencies:
-      he: 1.1.1
+      mime-types: 2.1.13
+      xml: 1.0.1
     dev: false
 
-  /remarkable@1.6.2:
-    resolution: {integrity: sha512-gZqJp3+zRkXScqlMOWD1GMujYtCvSGUvBXAQRcUvQcoW3EPitHAVJK2OxRgmVOMaU8rKQR7/xDkCjgawsz5fPQ==}
-    hasBin: true
+  /sitemap@1.5.0:
+    resolution: {integrity: sha512-AGevBYvwFaoBsZoWClv8qlaA3lpoPCUnNh2zxIHl3coZXXD5U2+GKtkMBS3pXvl5NXvzN4R0392gN4YrIpSUmQ==}
     dependencies:
-      argparse: 0.1.16
-      autolinker: 0.15.3
+      underscore: 1.13.7
+      url-join: 0.0.1
     dev: false
 
-  /underscore.string@2.4.0:
-    resolution: {integrity: sha512-yxkabuCaIBnzfIvX3kBxQqCs0ar/bfJwDnFEHJUm/ZrRVhT3IItdRF5cZjARLzEnyQYtIUhsZ2LG2j3HidFOFQ==}
+  /string.prototype.repeat@0.2.0:
+    resolution: {integrity: sha512-1BH+X+1hSthZFW+X+JaUkjkkUPwIlLEMJBLANN3hOob3RhEk5snLWNECDnYbgn/m5c5JV7Ersu1Yubaf+05cIA==}
     dev: false
 
-  /underscore@1.7.0:
-    resolution: {integrity: sha512-cp0oQQyZhUM1kpJDLdGO1jPZHgS/MpzoWYfe9+CM2h/QGDZlqwT2T3YGukuBdaNJ/CAPoeyAZRRHz8JFo176vA==}
+  /trim-html-tag@1.0.5:
+    resolution: {integrity: sha512-DUVWEkvR2WhZlQQGob6Wfp2P+LA3iMUM8j3zN2ULbEDdGSFUnQXahx1DNY3opCLutw/eylfS7uSQ5kRugDRKEA==}
+    dependencies:
+      ramda: 0.17.1
+    dev: false
+
+  /underscore@1.13.7:
+    resolution: {integrity: sha512-GMXzWtsc57XAtguZgaQViUOzs0KTkk8ojr3/xAxXLITqf/3EMwxC0inyETfDFjH/Krbhuep0HNbbjI9i/q3F3g==}
+    dev: false
+
+  /url-join@0.0.1:
+    resolution: {integrity: sha512-H6dnQ/yPAAVzMQRvEvyz01hhfQL5qRWSEt7BX8t9DqnPw9BjMb64fjIRq76Uvf1hkHp+mTZvEVJ5guXOT0Xqaw==}
+    dev: false
+
+  /xml@1.0.1:
+    resolution: {integrity: sha512-huCv9IH9Tcf95zuYCsQraZtWnJvBtLVE0QHMOs8bWyZAFZNDcYjsPq1nEx8jKA9y+Beo9v+7OBPRisQTjinQMw==}
     dev: false

@@ -1,4 +1,5 @@
 {
+  "root": "./docs",
   "title": "Circle 阅读助手",
   "description": "一款提供沉浸式阅读的扩展，拥有强大智能的识别和排版能力，让你爱上在网页上阅读",
   "language": "zh-hans",
@@ -6,35 +7,67 @@
     "highlight",
     "code",
     "popup",
+    "rss",
     "custom-favicon",
     "tbfed-pagefooter",
     "expandable-chapters",
+    "sitemap-general",
     "hide-element",
     "back-to-top-button",
     "splitter",
     "-lunr",
     "-search",
+    "donate",
+    "insert-logo",
+    "sidebar-style",
     "search-pro",
     "chapter-fold"
   ],
   "pluginsConfig": {
+    "sitemap-general": {
+      "prefix": "https://circlereader.com/"
+    },
+    "rss": {
+      "title": "Circle 阅读助手",
+      "description": "一款提供沉浸式阅读的扩展，拥有强大智能的识别和排版能力，让你爱上在网页上阅读",
+      "author": "染河<wenguang.fe@gmail.com>",
+      "feed_url": "https://circlereader.com/docs/rss",
+      "site_url": "https://circlereader.com/",
+      "managingEditor": "wenguang.fe@gmail.com",
+      "webMaster": "wenguang.fe@gmail.com"
+    },
     "hide-element": {
       "elements": [".gitbook-link"]
+    },
+    "sidebar-style": {
+      "title": "Circle 阅读助手",
+      "author": "染河"
+    },
+    "insert-logo": {
+      "url": "assets/logo.jpg",
+      "style": "width:60px;height:auto;"
+    },
+    "favicon": "assets/favicon.ico",
+    "donate": {
+      "wechat": "assets/images/wechat-pay.png",
+      "alipay": "assets/images/ali-pay.png",
+      "button": "鼓励一下",
+      "alipayText": "支付宝打赏",
+      "wechatText": "微信打赏"
     },
     "tbfed-pagefooter": {
       "copyright": "Copyright © 2023–2024 All rights reserved Circle Reader",
       "modify_label": "更新日期：",
       "modify_format": "YYYY-MM-DD HH:mm"
-    },
-    "favicon": "assets/favicon.ico"
-  },
-  "author": "wenguang.fe@gmail.com",
-  "links": {
-    "sidebar": {
-      "返回官网": "https://circlereader.com/"
     }
   },
-  "output": null,
+  "generator": "site",
+  "author": "染河<wenguang.fe@gmail.com>",
+  "links": {
+    "sidebar": {
+      "<< 返回官网": "https://circlereader.com/"
+    }
+  },
   "pdf": {
     "fontSize": 12,
     "footerTemplate": null,

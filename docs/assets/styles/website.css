@@ -1,0 +1,17 @@
+.sidebar-header h1.title {
+  font-size: 23px;
+  margin: 0 0 20px;
+}
+
+.book-summary ul.summary li ul.articles li span {
+  padding-left: 0;
+}
+
+.book-summary ul.summary li a.custom-link {
+  font-weight: bold;
+}
+
+#rewardButton span {
+  font-size: 13px;
+  background-color: #47944f;
+}
