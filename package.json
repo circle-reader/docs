@@ -1,0 +1,24 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "欢--迎使用产品！本手册将指导您如何配置、使用和解决问题。",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "start": "npx gitbook serve",
+    "build": "npx gitbook build"
+  },
+  "dependencies": {
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-chapter-fold": "^0.0.4",
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-custom-favicon": "^0.0.4",
+    "gitbook-plugin-expandable-chapters": "^0.2.0",
+    "gitbook-plugin-hide-element": "^0.0.4",
+    "gitbook-plugin-highlight": "^2.0.3",
+    "gitbook-plugin-popup": "^0.0.1",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-splitter": "^0.0.8",
+    "gitbook-plugin-tbfed-pagefooter": "^0.0.1"
+  }
+}

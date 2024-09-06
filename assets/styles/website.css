@@ -1,0 +1,9 @@
+.treeview__container {
+  position: relative;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+.book-summary ul.summary li ul.articles li span {
+  padding-left: 0;
+}
