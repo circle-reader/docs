@@ -64,3 +64,6 @@
     - [导出为图片](screenshot.md)
 - [开发手册](developer.md)
   - [API](api.md)
+- [支付协议](payment.md)
+- [用户协议](agreement.md)
+- [隐私政策](privacy.md)

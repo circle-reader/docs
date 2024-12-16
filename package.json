@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "version": "1.0.0",
-  "description": "欢--迎使用产品！本手册将指导您如何配置、使用和解决问题。",
+  "description": "欢迎使用 Circle 阅读助手！本手册将指导您如何配置、使用和解决问题。",
   "main": "index.js",
   "license": "ISC",
   "scripts": {
