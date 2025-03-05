@@ -2,8 +2,9 @@
 
 - [简介](README.md)
 - [使用指南](intro.md)
-- [安装使用](install_usage.md)
-- [常见问题](question_answer.md)
+- [安装使用](usage.md)
+- [常见问题](faq.md)
+- [更新日志](changelog.md)
 - [界面](ui.md)
 - [插件](plugins.md)
   - [消息提示框](notice.md)

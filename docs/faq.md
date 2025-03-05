@@ -1,9 +1,6 @@
 ## 如何反馈
 
-如果您在使用 Circle 阅读助手时遇到问题或有任何建议，请随时联系我们。我们会不断改进扩展，以提供更好的阅读体验。
-
-- **邮箱** [wenguang.fe@gmail.com](mailto:wenguang.fe@gmail.com)
-- **反馈** [https://support.qq.com/products/317910](https://support.qq.com/products/317910)
+如果您在使用 Circle 阅读助手时遇到问题或有任何建议，你可以通过扩展页面底部的“哭泣”图标联系我们。我们会不断改进扩展，以提供更好的阅读体验。
 
 ## Circle 阅读助手是免费的吗？
 
