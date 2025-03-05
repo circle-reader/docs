@@ -69,3 +69,5 @@
 - [支付协议](payment.md)
 - [用户协议](agreement.md)
 - [隐私政策](privacy.md)
+- [请求异常](api_offline.md)
+- [捐赠支持](donate.md)
