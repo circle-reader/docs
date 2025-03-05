@@ -5,6 +5,7 @@
 - [安装使用](usage.md)
 - [常见问题](faq.md)
 - [更新日志](changelog.md)
+- [共建支持](support.md)
 - [界面](ui.md)
 - [插件](plugins.md)
   - [消息提示框](notice.md)
