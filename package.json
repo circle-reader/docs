@@ -9,6 +9,7 @@
     "build": "npx gitbook build"
   },
   "dependencies": {
+    "gitbook-plugin-insert-js": "/Users/ranhe/circle/docs/plugins/gitbook-plugin-insert-js",
     "gitbook-plugin-back-to-top-button": "^0.1.4",
     "gitbook-plugin-chapter-fold": "^0.0.4",
     "gitbook-plugin-code": "^0.1.0",

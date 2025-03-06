@@ -4,6 +4,7 @@
   "description": "一款提供沉浸式阅读的扩展，拥有强大智能的识别和排版能力，让你爱上在网页上阅读",
   "language": "zh-hans",
   "plugins": [
+    "insert-js",
     "highlight",
     "code",
     "popup",
@@ -24,6 +25,11 @@
     "chapter-fold"
   ],
   "pluginsConfig": {
+    "insert-js": {
+      "js": [
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5908416007129457"
+      ]
+    },
     "sitemap-general": {
       "prefix": "https://circlereader.com/"
     },

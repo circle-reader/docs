@@ -1,0 +1,12 @@
+{
+  "name": "gitbook-plugin-insert-js",
+  "version": "0.0.1",
+  "main": "index.js",
+  "engines": {
+    "gitbook": ">=1.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "directories": {},
+  "license": "Apache 2"
+}
