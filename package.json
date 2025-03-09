@@ -6,7 +6,7 @@
   "license": "ISC",
   "scripts": {
     "start": "npx gitbook serve",
-    "build": "npx gitbook build"
+    "build": "npx gitbook build && node move.js"
   },
   "dependencies": {
     "gitbook-plugin-insert-js": "/Users/ranhe/circle/docs/plugins/gitbook-plugin-insert-js",

@@ -25,11 +25,6 @@
     "chapter-fold"
   ],
   "pluginsConfig": {
-    "insert-js": {
-      "js": [
-        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5908416007129457"
-      ]
-    },
     "sitemap-general": {
       "prefix": "https://circlereader.com/"
     },
