@@ -9,7 +9,8 @@
     "build": "npx gitbook build && node move.js"
   },
   "dependencies": {
-    "gitbook-plugin-insert-js": "/Users/ranhe/circle/docs/plugins/gitbook-plugin-insert-js",
+    "cheerio": "1.0.0-rc.12",
+    "gitbook-plugin-anchor-navigation-ex": "^1.0.14",
     "gitbook-plugin-back-to-top-button": "^0.1.4",
     "gitbook-plugin-chapter-fold": "^0.0.4",
     "gitbook-plugin-code": "^0.1.0",
@@ -18,6 +19,7 @@
     "gitbook-plugin-expandable-chapters": "^0.2.0",
     "gitbook-plugin-hide-element": "^0.0.4",
     "gitbook-plugin-highlight": "^2.0.3",
+    "gitbook-plugin-insert-js": "/Users/ranhe/circle/docs/plugins/gitbook-plugin-insert-js",
     "gitbook-plugin-insert-logo": "^0.1.5",
     "gitbook-plugin-popup": "^0.0.1",
     "gitbook-plugin-rss": "^3.0.2",
