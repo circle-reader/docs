@@ -1,6 +1,6 @@
 # Circle 阅读助手 v3.4.0
 
-[Circle 阅读助手现已支持 Safari 浏览器啦！](/safari-download)
+[Circle 阅读助手现已支持 Safari 浏览器啦！](https://circlereader.com/safari-download)
 
 ## 新增
 
@@ -11,7 +11,7 @@
 ## 修改
 
 - 导出内容片段时默认删除品牌标识。
-- “移除品牌标识”增加查看[详情页面](docs/faq/slogan.html)
+- “移除品牌标识”增加查看[详情页面](/faq/slogan.html)
 
 ## 修复
 
