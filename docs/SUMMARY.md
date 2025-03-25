@@ -69,6 +69,8 @@
     - [导出为 pdf](export_pdf.md)
     - [导出到稍后读](export_later.md)
     - [导出为图片](screenshot.md)
+    - [导出到熊掌记](export_bear.md)
+    - [导出到 WordPress](export_wp.md)
 - [开发手册](developer.md)
   - [API](api.md)
 - [支付协议](payment.md)
