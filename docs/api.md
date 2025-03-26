@@ -1,7 +1,6 @@
 API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系统允许的操作。
 
-系统相关
-----
+## 系统相关
 
 ### v3
 
@@ -21,11 +20,17 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 系统版本号。
 
-### language
+### lang
 
 类型`string`
 
-当前系统语言。 （目前支持zh\_CN：中文、zh\_TW：繁体中文、en：英文、ja：日文、ko：韩语、th：泰语）
+当前系统语言。 （目前支持 zh_CN：中文、zh_TW：繁体中文、en：英文、ja：日文、ko：韩语、th：泰语）
+
+### language
+
+类型`()=>Promise<lang>`
+
+切换系统语言，并返回切换之后的语言。
 
 ### device
 
@@ -118,19 +123,13 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型`(id?: string) => string`
 
-获取官网的地址；如 app.path('download') 是获取地址 ?? [https://circlereader.com/download](https://circlereader.com/download) 
+获取官网的地址；如 app.path('download') 是获取地址 ?? [https://circlereader.com/download](https://circlereader.com/download)
 
 ### match
 
 类型`(data: Array<any>, match?: string) => any;`
 
 匹配字符串是否在给定的数据内，内部基于 [minimatch](https://github.com/isaacs/minimatch)
-
-### isExtPage
-
-类型`(url?: string) => boolean`
-
-判断 URL 是否是浏览器自身的页面地址，不传参数则是判断当前页面地址。
 
 ### field
 
@@ -146,7 +145,7 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
         value: any
       ) => any
 
-跨插件临时保存数据，非必要请勿随意使用。传递 id 为string 和对象时为设置单个数据、数组时为批量设置数据。
+跨插件临时保存数据，非必要请勿随意使用。传递 id 为 string 和对象时为设置单个数据、数组时为批量设置数据。
 
 ### data
 
@@ -205,19 +204,19 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 从数据库查询插件的配置项数据；和 get 的区别是：
 
-*   自动读取插件配置项的默认值，数据库没有从插件提供的默认值获取。
-*   自动合并插件配置项的默认值，数据库保存的数据不完整（仅设置了一个选项）时自动合并入插件提供的默认值。
-*   自动读取当前主题设置下的值，如当前主题是夜间主题，查询主题和样式时自动查询夜间对应的配置。
+- 自动读取插件配置项的默认值，数据库没有从插件提供的默认值获取。
+- 自动合并插件配置项的默认值，数据库保存的数据不完整（仅设置了一个选项）时自动合并入插件提供的默认值。
+- 自动读取当前主题设置下的值，如当前主题是夜间主题，查询主题和样式时自动查询夜间对应的配置。
 
 当 id 不设置时，读取数据库中 id 为插件 ID 的数据。当设置为 option 时，自动读取当前插件的选项值，设置为 display 时，自动读取当前插件在当前主题下的设置。
 
-比如：ID 为 render 的插件中调用 app.option() 时，获取数据库中 id 为 render 对应的数据；调用 app.option('option') 时获取到的是 id 为 render\_option 对应的数据；调用 app.option('display') 时，当前主题未开启获取到的是 id 为 render\_dispaly 对应的数据，当前主题为日间时获取到的是 id 为 render\_light\_dispaly 对应的数据，当前主题为日间时获取到的是 id 为 render\_dark\_dispaly 对应的数据。设置也同样的逻辑。
+比如：ID 为 render 的插件中调用 app.option() 时，获取数据库中 id 为 render 对应的数据；调用 app.option('option') 时获取到的是 id 为 render_option 对应的数据；调用 app.option('display') 时，当前主题未开启获取到的是 id 为 render_dispaly 对应的数据，当前主题为日间时获取到的是 id 为 render_light_dispaly 对应的数据，当前主题为日间时获取到的是 id 为 render_dark_dispaly 对应的数据。设置也同样的逻辑。
 
 ### log
 
 类型`(...args: any) => string`
 
-系统调试模式下打印日志，格式为“plugin id” => args；如调试模式下，在 id 为 render的插件下调用app.log('我是染河'); 控制台输出 render => 我是染河
+系统调试模式下打印日志，格式为“plugin id” => args；如调试模式下，在 id 为 render 的插件下调用 app.log('我是染河'); 控制台输出 render => 我是染河
 
 ### action
 
@@ -225,10 +224,10 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 修改浏览器右上角 Circle 阅读助手的图标状态。具体如下：
 
-*   ready 识别成功，绿色可点击。
-*   enbale 启用，黑色可点击。
-*   disable 禁用，黑色不可点击
-*   force 禁用，黑色可点击。（强制解析正文）
+- ready 识别成功，绿色可点击。
+- enbale 启用，黑色可点击。
+- disable 禁用，黑色不可点击
+- force 禁用，黑色可点击。（强制解析正文）
 
 ### export
 
@@ -255,7 +254,7 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
         type?: string
       ) => Promise<any>
 
- 导入数据。type 仅有唯一值：'keep' 表示导入时不清空已有的数据。
+导入数据。type 仅有唯一值：'keep' 表示导入时不清空已有的数据。
 
 ### reset
 
@@ -290,8 +289,6 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
               contexts?: [string];
             }>
       ) => Promise<any>
-    
-     
 
 更新浏览器右键菜单。参数详情见 [https://developer.chrome.com/docs/extensions/reference/api/contextMenus](https://developer.chrome.com/docs/extensions/reference/api/contextMenus)
 
@@ -384,7 +381,7 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
       duration?: number; // 单位：小时
     ) => Promise<boolean>;
 
-定期执行 `callback` 返回 true或者不返回任何信息则为处理成功，否则下次仍然继续执行。`duration` _默认24 小时执行一次。_
+定期执行 `callback` 返回 true 或者不返回任何信息则为处理成功，否则下次仍然继续执行。`duration` _默认 24 小时执行一次。_
 
 ### i18n
 
@@ -411,15 +408,15 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 类型
 
     (
-    
+
     id: string,// 事件的 id
-    
+
     callback: string | any,//事件发生执行的操作
-    
+
     once?: boolean,//订阅一次，执行后销毁
-    
+
     priority?: number//事件触发执行优先级
-    
+
     ) => () => void // 返回销毁函数，调用会销毁当前订阅
 
 订阅一个事件。
@@ -435,18 +432,18 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 类型
 
     (
-    
+
     id: string | string[],
-    
+
     callback: string | any,
-    
+
     once?: boolean,
-    
+
     priority?: number
-    
+
     ) => () => void
 
-添加一个过滤器，类似于上面的 on。 
+添加一个过滤器，类似于上面的 on。
 
 ### applyFilter
 
@@ -472,9 +469,9 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 系统强相关的 API 仅对特定插件开放。
 
-*   listApp 列出已安装插件
-*   enable 启用插件
-*   disable 禁用插件
-*   uninstall 卸载插件
-*   install 安装插件
-*   apply 运行特定生命周期
+- listApp 列出已安装插件
+- enable 启用插件
+- disable 禁用插件
+- uninstall 卸载插件
+- install 安装插件
+- apply 运行特定生命周期
