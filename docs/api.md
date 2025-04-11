@@ -8,6 +8,16 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 系统是否运行在 mainfest v3 版本。
 
+### type
+
+类型`ext | monkey | web`
+
+系统运行环境，具体如下：
+
+- ext 浏览器扩展。
+- monkey 油猴扩展。
+- web 网页。
+
 ### debug
 
 类型`boolean`
@@ -24,7 +34,14 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型`string`
 
-当前系统语言。 （目前支持 zh_CN：中文、zh_TW：繁体中文、en：英文、ja：日文、ko：韩语、th：泰语）
+当前系统语言，目前支持：
+
+- zh_CN 中文
+- zh_TW 繁体中文
+- en 英文
+- ja 日文
+- ko 韩语
+- th 泰语
 
 ### language
 
@@ -32,45 +49,69 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 切换系统语言，并返回切换之后的语言。
 
+### config
+
+系统配置
+
+#### slogan
+
+类型`boolean`
+
+是否开启移除品牌标识。
+
+#### compatible
+
+类型`boolean`
+
+是否开启兼容模式。
+
+#### zoom
+
+类型`boolean`
+
+是否开启强制缩放。
+
 ### device
 
 类型
 
-    {
-        browser: 'edge' | 'opera' | 'firefox' | '360' | 'chrome' | '';
-        apple: {
-          phone: boolean;
-          ipod: boolean;
-          tablet: boolean;
-          universal: boolean;
-          device: boolean;
-        };
-        amazon: {
-          phone: boolean;
-          tablet: boolean;
-          device: boolean;
-        };
-        android: {
-          phone: boolean;
-          tablet: boolean;
-          device: boolean;
-        };
-        windows: {
-          phone: boolean;
-          tablet: boolean;
-          device: boolean;
-        };
-        other: {
-          blackberry: boolean;
-          blackberry10: boolean;
-          opera: boolean;
-          firefox: boolean;
-          chrome: boolean;
-          device: boolean;
-        };
-        phone: boolean;
-        tablet: boolean;
-      }
+```json
+{
+  browser: 'edge' | 'opera' | 'firefox' | '360' | 'chrome' | 'safari' | '';
+  apple: {
+    phone: boolean;
+    ipod: boolean;
+    tablet: boolean;
+    universal: boolean;
+    device: boolean;
+  };
+  amazon: {
+    phone: boolean;
+    tablet: boolean;
+    device: boolean;
+  };
+  android: {
+    phone: boolean;
+    tablet: boolean;
+    device: boolean;
+  };
+  windows: {
+    phone: boolean;
+    tablet: boolean;
+    device: boolean;
+  };
+  other: {
+    blackberry: boolean;
+    blackberry10: boolean;
+    opera: boolean;
+    firefox: boolean;
+    chrome: boolean;
+    device: boolean;
+  };
+  phone: boolean;
+  tablet: boolean;
+}
+```
 
 运行设备信息。
 
@@ -78,14 +119,16 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    {
-      uid: string; // 用户唯一的id
-      name?: string; // 用户名称
-      avatar?: string; // 用户头像
-      mail?: string; // 用户邮箱
-      roles: Array<string>; // 用户的角色
-      is_logged_in?: boolean; // 用户是否已登陆
-    }
+```json
+{
+  uid: string; // 用户唯一的id
+  name?: string; // 用户名称
+  avatar?: string; // 用户头像
+  mail?: string; // 用户邮箱
+  roles: Array<string>; // 用户的角色
+  is_logged_in?: boolean; // 用户是否已登陆
+}
+```
 
 当前用户信息。
 
@@ -105,11 +148,13 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    Array<{
-     table: 'apps' | 'option' | 'node'; // 表名
-     indexs: string | Array<string>; // indexDB 表索引
-     freeze: Array<string>; // 锁定的字段，被锁定的字段不允许导出和清除。
-    }>
+```js
+Array<{
+  table: 'apps' | 'option' | 'node'; // 表名
+  indexs: string | Array<string>; // indexDB 表索引
+  freeze: Array<string>; // 锁定的字段，被锁定的字段不允许导出和清除。
+}>
+```
 
 系统数据库表信息。
 
@@ -135,15 +180,17 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-        id:
-          | string
-          | Array<string>
-          | {
-              [index: string]: any;
-            },
-        value: any
-      ) => any
+```js
+(
+  id:
+    | string
+    | Array<string>
+    | {
+        [index: string]: any,
+      },
+  value: any
+) => any;
+```
 
 跨插件临时保存数据，非必要请勿随意使用。传递 id 为 string 和对象时为设置单个数据、数组时为批量设置数据。
 
@@ -163,12 +210,14 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (id: string | Array<{
-      id: string;
-      changed?: number;
-      value: any;
-      [index: string]: any;
-    }>, value?: any, table?: string) => Promise<any>
+```
+(id: string | Array<{
+  id: string;
+  changed?: number;
+  value: any;
+  [index: string]: any;
+}>, value?: any, table?: string) => Promise<any>
+```
 
 写入数据到数据库中。
 
@@ -182,19 +231,21 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (query?: {
-      field?: string;
-      keyRange?: any | Array<any>;
-      searchIn?: string | Array<string>;
-      search?: string;
-      order?: 'DESC' | 'ASC';
-      match?: {
-       [index: string]: string | boolean | Array<string>;
-     };
-    }, pager?: {
-      start: number;
-      limit: number;
-    }, table?: string) => Promise<any>
+```
+(query?: {
+  field?: string;
+  keyRange?: any | Array<any>;
+  searchIn?: string | Array<string>;
+  search?: string;
+  order?: 'DESC' | 'ASC';
+  match?: {
+    [index: string]: string | boolean | Array<string>;
+  };
+}, pager?: {
+  start: number;
+  limit: number;
+}, table?: string) => Promise<any>
+```
 
 从数据库查询数据。
 
@@ -233,10 +284,12 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (value?: string | Array<string>) => Promise<{
-      version: string;
-      data: any;
-    }>
+```
+(value?: string | Array<string>) => Promise<{
+  version: string;
+  data: any;
+}>
+```
 
 导出数据。value 是数据库表名，可选：option、node
 
@@ -244,15 +297,17 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-        value:
-          | string
-          | {
-              version?: string;
-              data: any;
-            },
-        type?: string
-      ) => Promise<any>
+```
+(
+    value:
+      | string
+      | {
+          version?: string;
+          data: any;
+        },
+    type?: string
+  ) => Promise<any>
+```
 
 导入数据。type 仅有唯一值：'keep' 表示导入时不清空已有的数据。
 
@@ -266,29 +321,31 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-        action: 'create' | 'update' | 'remove' | 'destory' | 'rebuild',
-        value?:
-          | string
-          | {
-              id: string;
-              type?: string;
-              label?: string;
-              action?: boolean;
-              checked?: boolean;
-              priority?: number;
-              contexts?: [string];
-            }
-          | Array<{
-              id: string;
-              type?: string;
-              label?: string;
-              action?: boolean;
-              checked?: boolean;
-              priority?: number;
-              contexts?: [string];
-            }>
-      ) => Promise<any>
+```
+(
+    action: 'create' | 'update' | 'remove' | 'destory' | 'rebuild',
+    value?:
+      | string
+      | {
+          id: string;
+          type?: string;
+          label?: string;
+          action?: boolean;
+          checked?: boolean;
+          priority?: number;
+          contexts?: [string];
+        }
+      | Array<{
+          id: string;
+          type?: string;
+          label?: string;
+          action?: boolean;
+          checked?: boolean;
+          priority?: number;
+          contexts?: [string];
+        }>
+  ) => Promise<any>
+```
 
 更新浏览器右键菜单。参数详情见 [https://developer.chrome.com/docs/extensions/reference/api/contextMenus](https://developer.chrome.com/docs/extensions/reference/api/contextMenus)
 
@@ -296,10 +353,12 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-        action: 'create' | 'update' | 'remove' | 'captureVisibleTab' | 'query',
-        value?: any
-      ) => Promise<any>
+```
+(
+    action: 'create' | 'update' | 'remove' | 'captureVisibleTab' | 'query',
+    value?: any
+  ) => Promise<any>
+```
 
 管理浏览器当前标签页。参数详情见 [https://developer.chrome.com/docs/extensions/reference/api/tabs](https://developer.chrome.com/docs/extensions/reference/api/tabs)
 
@@ -307,32 +366,36 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-        action: 'list'
-      ) => Promise<Array<{ displayName: string; fontId: string }>>;
+```
+(
+    action: 'list'
+  ) => Promise<Array<{ displayName: string; fontId: string }>>;
+```
 
-获取系统安装字体列表。
+获取系统安装字体列表，仅 Chrome 内核浏览器支持。
 
 ### windows
 
 类型
 
-    (
-        action: 'current' | 'create' | 'get' | 'update' | 'remove',
-        value?:
-          | number
-          | {
-              id?: number;
-              url?: string;
-              state?:
-                | 'normal'
-                | 'minimized'
-                | 'maximized'
-                | 'fullscreen'
-                | 'locked-fullscreen';
-              args?: any;
-            }
-      ) => Promise<any>
+```
+(
+    action: 'current' | 'create' | 'get' | 'update' | 'remove',
+    value?:
+      | number
+      | {
+          id?: number;
+          url?: string;
+          state?:
+            | 'normal'
+            | 'minimized'
+            | 'maximized'
+            | 'fullscreen'
+            | 'locked-fullscreen';
+          args?: any;
+        }
+  ) => Promise<any>
+```
 
 管理浏览器窗口。
 
@@ -376,10 +439,13 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-      callback: () => Promise<any> | boolean | void,
-      duration?: number; // 单位：小时
-    ) => Promise<boolean>;
+```
+(
+  callback: () => Promise<any> | boolean | void,
+  duration?: number; // 单位：小时
+  uid?: string; // 同一个应用多次调用区分不同的任务
+) => Promise<boolean>;
+```
 
 定期执行 `callback` 返回 true 或者不返回任何信息则为处理成功，否则下次仍然继续执行。`duration` _默认 24 小时执行一次。_
 
@@ -393,13 +459,15 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-     url: string,
-     options?: {
-      format?: 'json' | 'text' | 'blob';
-      [index: string]: any;
-     }
-    ) => Promise<any>
+```
+(
+url: string,
+options?: {
+  format?: 'json' | 'text' | 'blob';
+  [index: string]: any;
+}
+) => Promise<any>
+```
 
 发起一个请求，底层调用的 window.fetch，内部已经处理了跨域问题。
 
@@ -407,17 +475,14 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-
-    id: string,// 事件的 id
-
-    callback: string | any,//事件发生执行的操作
-
-    once?: boolean,//订阅一次，执行后销毁
-
-    priority?: number//事件触发执行优先级
-
-    ) => () => void // 返回销毁函数，调用会销毁当前订阅
+```
+(
+  id: string,// 事件的 id
+  callback: string | any,//事件发生执行的操作
+  once?: boolean,//订阅一次，执行后销毁
+  priority?: number//事件触发执行优先级
+) => () => void // 返回销毁函数，调用会销毁当前订阅
+```
 
 订阅一个事件。
 
@@ -431,25 +496,20 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 类型
 
-    (
-
-    id: string | string[],
-
-    callback: string | any,
-
-    once?: boolean,
-
-    priority?: number
-
-    ) => () => void
+```
+(
+  id: string | string[],
+  callback: string | any,
+  once?: boolean,
+  priority?: number
+) => () => void
+```
 
 添加一个过滤器，类似于上面的 on。
 
 ### applyFilter
 
-类型
-
-    (id: string, ...args: any[]) => any
+类型 `(id: string, ...args: any[]) => any`
 
 执行一个过滤器，类似于上面的 fire，但可以通过返回不同的值改变后续过滤器接收到的参数。
 
@@ -465,7 +525,19 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 
 移除 id 对应事件的订阅或者过滤
 
-### 偏好设置独有
+### getApp
+
+类型`(id: string | Array<string> | Plugin | Array<Plugin>) => Promise<Plugin>`
+
+获取单个应用信息。
+
+### disable
+
+类型`(id: string | Array<string> | Plugin | Array<Plugin>) => Promise<boolean>`
+
+禁用特定应用。
+
+### 偏好设置和应用市场独有，其他插件无权限调用
 
 系统强相关的 API 仅对特定插件开放。
 
@@ -475,3 +547,8 @@ API 是插件和核心系统交互的桥梁，通过 API 可以执行任何系�
 - uninstall 卸载插件
 - install 安装插件
 - apply 运行特定生命周期
+
+### 开发工具独有
+
+- uninstall 卸载插件
+- install 安装插件
