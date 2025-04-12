@@ -1,6 +1,8 @@
 # Circle 阅读助手 `v3.4.5`
 
-⚠️ 如果你安装的版本非 v3.4.5 说明相关的浏览器扩展市场在审核中，想尽快体验新版本，可以[手动下载](https://circlereader.com/manual-download)体验。
+⚠️ 如果你安装的版本非 `v3.4.5` 说明相关的浏览器扩展市场在审核中，想尽快体验新版本，可以[手动下载](https://circlereader.com/manual-download)体验。
+
+看文字太枯燥？[视频介绍在此](https://www.bilibili.com/video/BV13Nd8Y7EFt/)！！！
 
 ## 新增
 
